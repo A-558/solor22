@@ -1,0 +1,2139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sun Rooted — Solar Dehydrated Fruit & Veg Powders</title>
+    <meta
+      name="description"
+      content="Solar dehydrated fruit and vegetable powders for smoothies, baking, and cooking. Clean, vibrant, shelf-stable nutrition."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+:root {
+  --bg: #fdf8e9;
+  --card: rgba(255, 255, 255, 0.85);
+  --text: #4a3b32;
+  --muted: #7c6b5e;
+  --yellow: #ffcc33;
+  --orange: #e67e22;
+  --green: #4caf50;
+  --shadow: 0 12px 30px rgba(74, 59, 50, 0.12);
+  --shadow-soft: 0 10px 25px rgba(74, 59, 50, 0.08);
+  --radius: 18px;
+  --radius-sm: 12px;
+  --ring: 0 0 0 4px rgba(230, 126, 34, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Outfit", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 700px at 20% -10%, rgba(255, 204, 51, 0.28), transparent 55%),
+    radial-gradient(900px 600px at 100% 0%, rgba(76, 175, 80, 0.14), transparent 55%),
+    radial-gradient(900px 700px at 10% 95%, rgba(230, 126, 34, 0.12), transparent 55%), var(--bg);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", ui-serif, Georgia, "Times New Roman", Times, serif;
+  margin: 0 0 12px;
+  letter-spacing: 0.2px;
+}
+
+p {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: min(1160px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 12px;
+  background: #111;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 10px;
+  z-index: 2000;
+}
+
+.skip-link:focus {
+  left: 12px;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(253, 248, 233, 0.72);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(74, 59, 50, 0.08);
+  transition: box-shadow 200ms ease, background 200ms ease;
+}
+
+.site-header[data-scrolled="1"] {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  background: rgba(253, 248, 233, 0.92);
+}
+
+.scroll-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange), var(--yellow), var(--green));
+  transform: scaleX(var(--scroll, 0));
+  transform-origin: 0 50%;
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.site-header[data-scrolled="1"] .scroll-progress {
+  opacity: 0.9;
+}
+
+.site-header--compact .header-inner {
+  padding: 14px 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 220px;
+}
+
+.brand-name {
+  display: block;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.brand-sub {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 204, 51, 0.22);
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.sun {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--yellow);
+  box-shadow: 0 0 0 8px rgba(255, 204, 51, 0.18);
+  position: relative;
+  animation: sunPulse 3.2s ease-in-out infinite;
+}
+
+.sun::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(230, 126, 34, 0.0), rgba(230, 126, 34, 0.26), rgba(76, 175, 80, 0.0));
+  filter: blur(0.3px);
+  animation: sunSpin 7s linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes sunSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sunPulse {
+  0%,
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 0 0 8px rgba(255, 204, 51, 0.18);
+  }
+  50% {
+    transform: translateY(-1px);
+    box-shadow: 0 0 0 10px rgba(255, 204, 51, 0.22);
+  }
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.site-nav a {
+  padding: 10px 10px;
+  border-radius: 12px;
+  color: var(--text);
+  font-weight: 500;
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.site-nav a:hover {
+  background: rgba(74, 59, 50, 0.06);
+  transform: translateY(-1px);
+}
+
+.nav-cta {
+  background: rgba(230, 126, 34, 0.14);
+  border: 1px solid rgba(230, 126, 34, 0.28);
+}
+
+.nav-toggle {
+  display: none;
+  border: 0;
+  background: rgba(74, 59, 50, 0.06);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.nav-toggle-lines {
+  display: block;
+  width: 22px;
+  height: 14px;
+  position: relative;
+}
+
+.nav-toggle-lines::before,
+.nav-toggle-lines::after,
+.nav-toggle-lines {
+  background: transparent;
+}
+
+.nav-toggle-lines::before,
+.nav-toggle-lines::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--text);
+  border-radius: 999px;
+  transition: transform 180ms ease, top 180ms ease, bottom 180ms ease;
+}
+
+.nav-toggle-lines::before {
+  top: 2px;
+}
+
+.nav-toggle-lines::after {
+  bottom: 2px;
+}
+
+.nav-toggle[data-open="1"] .nav-toggle-lines::before {
+  top: 6px;
+  transform: rotate(45deg);
+}
+
+.nav-toggle[data-open="1"] .nav-toggle-lines::after {
+  bottom: 6px;
+  transform: rotate(-45deg);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-weight: 600;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease;
+  user-select: none;
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--orange), #d46c14);
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(230, 126, 34, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(230, 126, 34, 0.33);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(74, 59, 50, 0.14);
+  color: var(--text);
+}
+
+.btn-ghost:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.btn-small {
+  padding: 10px 14px;
+  font-size: 0.95rem;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  padding: 60px 0 20px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: -120px 0 auto 0;
+  height: 520px;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 38% 62% 44% 56% / 45% 55% 45% 55%;
+  filter: blur(0.2px);
+  opacity: 0.9;
+  animation: blobFloat 12s ease-in-out infinite;
+}
+
+.blob-a {
+  left: -160px;
+  top: -120px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 204, 51, 0.42), rgba(255, 204, 51, 0.08) 60%, transparent 70%);
+}
+
+.blob-b {
+  right: -220px;
+  top: -180px;
+  background: radial-gradient(circle at 35% 35%, rgba(76, 175, 80, 0.22), rgba(76, 175, 80, 0.06) 60%, transparent 70%);
+  animation-delay: -4s;
+}
+
+@keyframes blobFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-2deg);
+  }
+  50% {
+    transform: translate3d(0, 22px, 0) rotate(2deg);
+  }
+}
+
+.sparkles {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 204, 51, 0.55) 1px, transparent 1px),
+    radial-gradient(rgba(230, 126, 34, 0.28) 1px, transparent 1px);
+  background-size: 48px 48px, 72px 72px;
+  background-position: 0 0, 18px 26px;
+  opacity: 0.25;
+  mask-image: radial-gradient(circle at 30% 40%, #000 0%, transparent 65%);
+  animation: sparkleDrift 18s linear infinite;
+}
+
+@keyframes sparkleDrift {
+  to {
+    transform: translate3d(0, 18px, 0);
+  }
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 42px;
+  align-items: center;
+  padding: 34px 0 24px;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(74, 59, 50, 0.12);
+  width: fit-content;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.kicker::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--yellow);
+  box-shadow: 0 0 0 6px rgba(255, 204, 51, 0.2);
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 58ch;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(74, 59, 50, 0.12);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.badge-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--yellow);
+  box-shadow: 0 0 0 6px rgba(255, 204, 51, 0.18);
+}
+
+.badge-dot--green {
+  background: var(--green);
+  box-shadow: 0 0 0 6px rgba(76, 175, 80, 0.16);
+}
+
+.badge-dot--orange {
+  background: var(--orange);
+  box-shadow: 0 0 0 6px rgba(230, 126, 34, 0.16);
+}
+
+.fineprint {
+  font-size: 0.92rem;
+  color: rgba(74, 59, 50, 0.7);
+  margin-top: 12px;
+}
+
+.hero-art {
+  position: relative;
+  min-height: 420px;
+}
+
+.product-card-float {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: min(360px, 100%);
+  padding: 18px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.56);
+  border: 1px solid rgba(74, 59, 50, 0.12);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+  animation: floaty 5.2s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+.jar {
+  height: 230px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.65));
+  border: 1px solid rgba(74, 59, 50, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.jar-top {
+  height: 38px;
+  background: linear-gradient(180deg, rgba(74, 59, 50, 0.25), rgba(74, 59, 50, 0.12));
+  border-bottom: 1px solid rgba(74, 59, 50, 0.12);
+}
+
+.jar-label {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: 76px;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(253, 248, 233, 0.88);
+  border: 1px solid rgba(74, 59, 50, 0.12);
+}
+
+.jar-title {
+  font-family: "Playfair Display", ui-serif, Georgia, serif;
+  color: var(--text);
+  letter-spacing: 1.2px;
+  font-weight: 700;
+}
+
+.jar-sub {
+  margin-top: 4px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: rgba(74, 59, 50, 0.72);
+}
+
+.jar-fill {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -40px;
+  height: 140px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 204, 51, 0.85), rgba(230, 126, 34, 0.76));
+  filter: saturate(1.05);
+  transform: skewY(-2deg);
+  animation: fillWave 4s ease-in-out infinite;
+}
+
+@keyframes fillWave {
+  0%,
+  100% {
+    transform: translateY(0) skewY(-2deg);
+  }
+  50% {
+    transform: translateY(-8px) skewY(1deg);
+  }
+}
+
+.float-items .chip {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 7px;
+  opacity: 0.95;
+  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.12));
+}
+
+.chip--mango {
+  left: 10px;
+  top: 40px;
+  background: radial-gradient(circle at 30% 30%, #ffe57a, var(--orange));
+  animation: chipDrift 4.8s ease-in-out infinite;
+}
+
+.chip--beet {
+  right: 28px;
+  top: 26px;
+  background: radial-gradient(circle at 30% 30%, #ff7aa8, #b0144b);
+  animation: chipDrift 5.4s ease-in-out infinite;
+  animation-delay: -1.2s;
+}
+
+.chip--leaf {
+  right: 12px;
+  bottom: 34px;
+  background: radial-gradient(circle at 30% 30%, #a9f5b4, var(--green));
+  animation: chipDrift 6.2s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+@keyframes chipDrift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-2deg);
+  }
+  50% {
+    transform: translate3d(0, -14px, 0) rotate(4deg);
+  }
+}
+
+.hero-photo {
+  position: absolute;
+  right: -16px;
+  bottom: -12px;
+  width: 78%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(74, 59, 50, 0.12);
+  transform: rotate(1.2deg);
+}
+
+.hero-photo img {
+  opacity: 0.95;
+  transform: scale(1.06);
+  filter: contrast(1.02) saturate(1.06);
+}
+
+/* Sections */
+.section {
+  padding: 70px 0;
+}
+
+.section-alt {
+  background: rgba(255, 255, 255, 0.35);
+  border-top: 1px solid rgba(74, 59, 50, 0.06);
+  border-bottom: 1px solid rgba(74, 59, 50, 0.06);
+}
+
+.section-head {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 26px;
+}
+
+.section-head p {
+  max-width: 70ch;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.feature {
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(74, 59, 50, 0.1);
+  border-radius: var(--radius);
+  padding: 18px 18px 16px;
+  box-shadow: var(--shadow-soft);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature::after {
+  content: "";
+  position: absolute;
+  inset: -60px -60px auto auto;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 204, 51, 0.25), transparent 65%);
+  transform: rotate(10deg);
+}
+
+.feature:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.feature-ico {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 204, 51, 0.18);
+  border: 1px solid rgba(255, 204, 51, 0.35);
+  margin-bottom: 12px;
+}
+
+.ico-sun,
+.ico-leaf,
+.ico-drop {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.ico-sun {
+  border-radius: 50%;
+  background: var(--yellow);
+  box-shadow: 0 0 0 6px rgba(255, 204, 51, 0.18);
+}
+
+.ico-leaf {
+  border-radius: 6px 14px 6px 14px;
+  background: var(--green);
+  transform: rotate(20deg);
+}
+
+.ico-drop {
+  background: radial-gradient(circle at 30% 30%, #fff, rgba(255, 255, 255, 0.2) 35%, transparent 36%),
+    linear-gradient(180deg, rgba(230, 126, 34, 0.8), rgba(230, 126, 34, 0.2));
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  transform: rotate(10deg);
+}
+
+/* Timeline */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(var(--yellow), rgba(230, 126, 34, 0.5), rgba(76, 175, 80, 0.55));
+  opacity: 0.6;
+}
+
+.timeline-step {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.step-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--yellow);
+  box-shadow: 0 0 0 7px rgba(255, 204, 51, 0.18);
+  margin-left: 7px;
+  margin-top: 6px;
+  transform: scale(0.9);
+}
+
+.timeline-step.is-active .step-dot {
+  background: var(--orange);
+  box-shadow: 0 0 0 10px rgba(230, 126, 34, 0.18);
+  transform: scale(1);
+  transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
+}
+
+.step-card {
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(74, 59, 50, 0.1);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Products */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.p-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(74, 59, 50, 0.1);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.p-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.p-media {
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+  position: relative;
+}
+
+.p-badge {
+  width: fit-content;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(255, 204, 51, 0.22);
+  border: 1px solid rgba(255, 204, 51, 0.38);
+}
+
+.p-badge--green {
+  background: rgba(76, 175, 80, 0.18);
+  border-color: rgba(76, 175, 80, 0.28);
+}
+
+.p-badge--orange {
+  background: rgba(230, 126, 34, 0.16);
+  border-color: rgba(230, 126, 34, 0.26);
+}
+
+.p-swatch {
+  height: 120px;
+  border-radius: 16px;
+  border: 1px solid rgba(74, 59, 50, 0.1);
+  box-shadow: inset 0 -20px 40px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.p-swatch::after {
+  content: "";
+  position: absolute;
+  inset: -80px -120px auto auto;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.35), transparent 60%);
+  transform: rotate(12deg);
+}
+
+.p-swatch--mango {
+  background: linear-gradient(135deg, #ffd56a, rgba(230, 126, 34, 0.92));
+}
+
+.p-swatch--spinach {
+  background: linear-gradient(135deg, #9bf2a6, rgba(76, 175, 80, 0.92));
+}
+
+.p-swatch--beet {
+  background: linear-gradient(135deg, #ff6f9b, rgba(176, 20, 75, 0.92));
+}
+
+.p-body {
+  padding: 16px;
+}
+
+.p-meta {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: rgba(74, 59, 50, 0.78);
+}
+
+.p-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.section-cta {
+  margin-top: 18px;
+}
+
+.cta-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(74, 59, 50, 0.1);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Contact */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.contact-cards {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.contact-card {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(74, 59, 50, 0.1);
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-ico {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  background: rgba(255, 204, 51, 0.22);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-ico::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: 6px 12px 6px 12px;
+  background: var(--orange);
+  transform: rotate(14deg);
+  opacity: 0.9;
+}
+
+.contact-ico--phone {
+  background: rgba(76, 175, 80, 0.18);
+}
+
+.contact-ico--phone::after {
+  background: var(--green);
+  border-radius: 12px;
+  transform: rotate(0deg);
+}
+
+.contact-label {
+  font-weight: 700;
+  color: rgba(74, 59, 50, 0.75);
+  font-size: 0.9rem;
+}
+
+.contact-value {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.contact-form {
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(74, 59, 50, 0.1);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.contact-form span {
+  font-weight: 700;
+  color: rgba(74, 59, 50, 0.75);
+  font-size: 0.9rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(74, 59, 50, 0.16);
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--text);
+  outline: none;
+  transition: box-shadow 160ms ease, border-color 160ms ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  box-shadow: var(--ring);
+  border-color: rgba(230, 126, 34, 0.3);
+}
+
+/* Footer */
+.site-footer {
+  padding: 26px 0 34px;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  border-top: 1px solid rgba(74, 59, 50, 0.1);
+  padding-top: 18px;
+}
+
+.footer-brand {
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.footer-note {
+  color: rgba(74, 59, 50, 0.72);
+  font-size: 0.95rem;
+}
+
+.footer-right {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footer-right a {
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(74, 59, 50, 0.08);
+}
+
+/* Finder */
+.finder {
+  padding: 34px 0 64px;
+}
+
+.finder-head {
+  margin: 16px 0 18px;
+}
+
+.finder-controls {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr 0.8fr auto;
+  gap: 12px;
+  align-items: end;
+  padding: 14px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(74, 59, 50, 0.1);
+  box-shadow: var(--shadow-soft);
+}
+
+.control {
+  display: grid;
+  gap: 8px;
+}
+
+.control-label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: rgba(74, 59, 50, 0.75);
+}
+
+.results-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 16px 0 12px;
+}
+
+.results-count {
+  font-weight: 800;
+}
+
+.results-hint {
+  color: rgba(74, 59, 50, 0.72);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.finder-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.f-card {
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(74, 59, 50, 0.1);
+  box-shadow: var(--shadow-soft);
+  padding: 14px;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  cursor: pointer;
+}
+
+.f-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.f-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pill {
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  border: 1px solid rgba(74, 59, 50, 0.12);
+  background: rgba(253, 248, 233, 0.8);
+}
+
+.pill--fruit {
+  background: rgba(255, 204, 51, 0.18);
+  border-color: rgba(255, 204, 51, 0.34);
+}
+
+.pill--veg {
+  background: rgba(76, 175, 80, 0.16);
+  border-color: rgba(76, 175, 80, 0.28);
+}
+
+.pill--blend {
+  background: rgba(230, 126, 34, 0.14);
+  border-color: rgba(230, 126, 34, 0.28);
+}
+
+.f-title {
+  margin-top: 10px;
+  color: var(--text);
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tag {
+  font-weight: 700;
+  font-size: 0.86rem;
+  padding: 7px 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(74, 59, 50, 0.1);
+  color: rgba(74, 59, 50, 0.78);
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  place-items: center;
+  z-index: 2000;
+}
+
+.modal[aria-hidden="false"] {
+  display: grid;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 16, 14, 0.55);
+  backdrop-filter: blur(6px);
+}
+
+.modal-card {
+  position: relative;
+  width: min(560px, calc(100% - 30px));
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(74, 59, 50, 0.12);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+  padding: 18px;
+  animation: pop 180ms ease-out;
+}
+
+@keyframes pop {
+  from {
+    transform: translateY(10px) scale(0.98);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  right: 14px;
+  top: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  border: 1px solid rgba(74, 59, 50, 0.14);
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.modal-desc {
+  color: rgba(74, 59, 50, 0.78);
+}
+
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 14px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(74, 59, 50, 0.14);
+  box-shadow: var(--shadow);
+  padding: 12px 14px;
+  border-radius: 999px;
+  display: none;
+  z-index: 3000;
+  font-weight: 700;
+}
+
+.toast[data-show="1"] {
+  display: block;
+  animation: toastIn 180ms ease-out;
+}
+
+@keyframes toastIn {
+  from {
+    transform: translateX(-50%) translateY(8px);
+    opacity: 0.3;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-art {
+    min-height: 420px;
+  }
+  .feature-grid,
+  .product-grid,
+  .finder-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .site-nav {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    top: 74px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(74, 59, 50, 0.12);
+    border-radius: var(--radius);
+    padding: 10px;
+    box-shadow: var(--shadow);
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+  .site-nav a {
+    padding: 12px 12px;
+  }
+  .site-nav[data-open="1"] {
+    display: flex;
+  }
+  .site-nav--inline {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    box-shadow: none;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+  .hero-photo {
+    right: 0;
+    width: 92%;
+  }
+  .feature-grid,
+  .product-grid,
+  .finder-grid {
+    grid-template-columns: 1fr;
+  }
+  .finder-controls {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+  .cta-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .results-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+</style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-elevate>
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Sun Rooted home">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="sun"></span>
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">Sun Rooted</span>
+            <span class="brand-sub">Solar Dehydrated Powders</span>
+          </span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-lines" aria-hidden="true"></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <a href="#products">Products</a>
+          <a href="#process">Process</a>
+          <a href="#why">Why Solar</a>
+          <a href="#contact">Contact</a>
+          <a class="nav-cta" href="#finder">Product Finder</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="home">
+        <div class="hero-bg" aria-hidden="true">
+          <div class="blob blob-a"></div>
+          <div class="blob blob-b"></div>
+          <div class="sparkles"></div>
+        </div>
+
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="kicker reveal">Nature’s flavour, locked in by the sun</p>
+            <h1 class="reveal">Real produce. Sun-dried. Ready to blend.</h1>
+            <p class="lead reveal">
+              Clean-label ingredients for smoothies, baking, sauces, soups, and functional blends — made from real produce and
+              gently dehydrated to preserve colour, aroma, and taste.
+            </p>
+
+            <div class="hero-actions reveal">
+              <a class="btn btn-primary" href="#products">Explore powders</a>
+              <a class="btn btn-ghost" href="#finder">Find the right powder</a>
+            </div>
+
+            <div class="hero-badges reveal">
+              <div class="badge-pill">
+                <span class="badge-dot" aria-hidden="true"></span>
+                Solar-assisted dehydration
+              </div>
+              <div class="badge-pill">
+                <span class="badge-dot badge-dot--green" aria-hidden="true"></span>
+                No added colours & preservatives*
+              </div>
+              <div class="badge-pill">
+                <span class="badge-dot badge-dot--orange" aria-hidden="true"></span>
+                Shelf-stable & easy to use
+              </div>
+            </div>
+            <p class="fineprint reveal">*Formulation shown for demo; customize per product.</p>
+          </div>
+
+          <div class="hero-art reveal">
+            <div class="product-card-float" role="img" aria-label="A jar of powder with fruit and vegetable accents">
+              <div class="jar">
+                <div class="jar-top"></div>
+                <div class="jar-label">
+                  <div class="jar-title">SUN ROOTED</div>
+                  <div class="jar-sub">SOLAR POWDER</div>
+                </div>
+                <div class="jar-fill"></div>
+              </div>
+              <div class="float-items" aria-hidden="true">
+                <span class="chip chip--mango"></span>
+                <span class="chip chip--beet"></span>
+                <span class="chip chip--leaf"></span>
+              </div>
+            </div>
+            <div class="hero-photo">
+              <img src="data:image/jpeg;base64,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" alt="Solar-dehydrated powder showcase" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="why">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Why solar dehydration?</h2>
+            <p>
+              A gentle drying approach that helps keep ingredients closer to their natural taste — with a story your customers
+              love.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature reveal">
+              <div class="feature-ico" aria-hidden="true">
+                <span class="ico-sun"></span>
+              </div>
+              <h3>Clean, vibrant flavour</h3>
+              <p>Concentrated taste and aroma for blends, beverages, bakery mixes, and seasoning bases.</p>
+            </article>
+            <article class="feature reveal">
+              <div class="feature-ico" aria-hidden="true">
+                <span class="ico-leaf"></span>
+              </div>
+              <h3>Simple ingredient story</h3>
+              <p>Real produce in, real powder out — ideal for clean-label and wellness-focused products.</p>
+            </article>
+            <article class="feature reveal">
+              <div class="feature-ico" aria-hidden="true">
+                <span class="ico-drop"></span>
+              </div>
+              <h3>Less waste, longer life</h3>
+              <p>Powders are easy to store, transport, and use year-round with consistent performance.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="process">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>From farm to powder</h2>
+            <p>A clear, client-ready flow — with small animations as you scroll.</p>
+          </div>
+
+          <ol class="timeline" aria-label="Process steps">
+            <li class="timeline-step reveal">
+              <div class="step-dot" aria-hidden="true"></div>
+              <div class="step-card">
+                <h3>Selection</h3>
+                <p>Choose ripe produce, then wash and prep to lock in natural colour and flavour.</p>
+              </div>
+            </li>
+            <li class="timeline-step reveal">
+              <div class="step-dot" aria-hidden="true"></div>
+              <div class="step-card">
+                <h3>Solar dehydration</h3>
+                <p>Controlled airflow + solar-assisted drying to remove moisture gently.</p>
+              </div>
+            </li>
+            <li class="timeline-step reveal">
+              <div class="step-dot" aria-hidden="true"></div>
+              <div class="step-card">
+                <h3>Milling & sieving</h3>
+                <p>Grind to a smooth powder and sieve for consistent texture.</p>
+              </div>
+            </li>
+            <li class="timeline-step reveal">
+              <div class="step-dot" aria-hidden="true"></div>
+              <div class="step-card">
+                <h3>Packing</h3>
+                <p>Pack for freshness with options for retail, foodservice, or bulk supply.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section" id="products">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Featured powders</h2>
+            <p>Demo assortment — swap names, colours, and SKUs to match your client’s catalog.</p>
+          </div>
+
+          <div class="product-grid">
+            <article class="p-card reveal">
+              <div class="p-media">
+                <div class="p-badge">Popular</div>
+                <div class="p-swatch p-swatch--mango" aria-hidden="true"></div>
+              </div>
+              <div class="p-body">
+                <div class="p-meta">Fruit • Smoothies</div>
+                <h3>Mango Powder</h3>
+                <p>Sweet, bright, and instantly soluble in yoghurt, shakes, and bakery mixes.</p>
+                <div class="p-actions">
+                  <a class="btn btn-small btn-ghost" href="?q=mango">Find uses</a>
+                  <a class="btn btn-small btn-primary" href="#contact">Request quote</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="p-card reveal">
+              <div class="p-media">
+                <div class="p-badge p-badge--green">New</div>
+                <div class="p-swatch p-swatch--spinach" aria-hidden="true"></div>
+              </div>
+              <div class="p-body">
+                <div class="p-meta">Vegetable • Fortification</div>
+                <h3>Spinach Powder</h3>
+                <p>Earthy greens for pasta, soups, savoury premixes, and nutrition blends.</p>
+                <div class="p-actions">
+                  <a class="btn btn-small btn-ghost" href="?q=spinach">Find uses</a>
+                  <a class="btn btn-small btn-primary" href="#contact">Request quote</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="p-card reveal">
+              <div class="p-media">
+                <div class="p-badge p-badge--orange">Chef pick</div>
+                <div class="p-swatch p-swatch--beet" aria-hidden="true"></div>
+              </div>
+              <div class="p-body">
+                <div class="p-meta">Vegetable • Colour</div>
+                <h3>Beetroot Powder</h3>
+                <p>Vibrant natural colour for drinks, sauces, frostings, and dessert mixes.</p>
+                <div class="p-actions">
+                  <a class="btn btn-small btn-ghost" href="?q=beet">Find uses</a>
+                  <a class="btn btn-small btn-primary" href="#contact">Request quote</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="section-cta reveal">
+            <div class="cta-box">
+              <div>
+                <h3>Need a quick product shortlist?</h3>
+                <p>Use the Product Finder to filter by “Use case” and “Type” (fruit/veg).</p>
+              </div>
+              <a class="btn btn-primary" href="#finder">Open Product Finder</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="finder">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Find the right powder</h2>
+            <p>Type a fruit/vegetable name or filter by type and use-case.</p>
+          </div>
+
+          <div class="finder">
+            <section class="finder-controls reveal" aria-label="Search and filters">
+              <label class="control">
+                <span class="control-label">Search</span>
+                <input id="q" type="search" placeholder="e.g., mango, beet, spinach..." />
+              </label>
+
+              <label class="control">
+                <span class="control-label">Type</span>
+                <select id="type">
+                  <option value="all">All</option>
+                  <option value="fruit">Fruit</option>
+                  <option value="vegetable">Vegetable</option>
+                  <option value="blend">Blend</option>
+                </select>
+              </label>
+
+              <label class="control">
+                <span class="control-label">Use case</span>
+                <select id="use">
+                  <option value="all">All</option>
+                  <option value="smoothies">Smoothies</option>
+                  <option value="baking">Baking</option>
+                  <option value="soups">Soups &amp; sauces</option>
+                  <option value="seasoning">Seasoning</option>
+                  <option value="fortification">Fortification</option>
+                </select>
+              </label>
+
+              <button class="btn btn-ghost btn-small" id="clear" type="button">Clear</button>
+            </section>
+
+            <section class="finder-results" aria-label="Results">
+              <div class="results-bar reveal">
+                <div class="results-count" id="count">0 results</div>
+                <div class="results-hint">Tip: click a card for suggested applications.</div>
+              </div>
+
+              <div id="grid" class="finder-grid"></div>
+            </section>
+          </div>
+        </div>
+      </section>
+      <section class="section section-alt" id="contact">
+        <div class="container">
+          <div class="contact-grid">
+            <div class="reveal">
+              <h2>Let’s build your powder range</h2>
+              <p class="lead">
+                Share your target use (smoothie blends, bakery, soups, seasonings) and preferred pack size — we’ll propose a
+                neat SKU lineup for your brand.
+              </p>
+
+              <div class="contact-cards">
+                <div class="contact-card">
+                  <div class="contact-ico" aria-hidden="true"></div>
+                  <div>
+                    <div class="contact-label">Email</div>
+                    <a class="contact-value" href="mailto:hello@sunrooted.demo">hello@sunrooted.demo</a>
+                  </div>
+                </div>
+                <div class="contact-card">
+                  <div class="contact-ico contact-ico--phone" aria-hidden="true"></div>
+                  <div>
+                    <div class="contact-label">Phone</div>
+                    <a class="contact-value" href="tel:+910000000000">+91 00000 00000</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <form class="contact-form reveal" action="#" method="post">
+              <div class="form-row">
+                <label>
+                  <span>Name</span>
+                  <input type="text" name="name" placeholder="Your name" autocomplete="name" required />
+                </label>
+                <label>
+                  <span>Email</span>
+                  <input type="email" name="email" placeholder="you@company.com" autocomplete="email" required />
+                </label>
+              </div>
+
+              <label>
+                <span>Interested in</span>
+                <select name="interest">
+                  <option>Retail packs</option>
+                  <option>Bulk supply</option>
+                  <option>Private label</option>
+                  <option>R&D samples</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Message</span>
+                <textarea name="message" rows="4" placeholder="Tell us the powders you want, quantities, and use case."></textarea>
+              </label>
+
+              <button class="btn btn-primary" type="button" data-toast="Thanks! This form is a demo.">
+                Send inquiry
+              </button>
+              <p class="fineprint">Demo-only form (no backend). Hook it to email or a CRM when ready.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <div class="footer-brand">Sun Rooted</div>
+          <div class="footer-note">Solar Dehydrated Fruit & Vegetable Powders</div>
+        </div>
+        <div class="footer-right">
+          <a href="#home">Back to top</a>
+          <a href="#finder">Product Finder</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+      <div class="modal-backdrop" data-close="1"></div>
+      <div class="modal-card" role="document">
+        <button class="modal-close" type="button" data-close="1" aria-label="Close">x</button>
+        <h2 id="modalTitle">Powder</h2>
+        <p id="modalDesc" class="modal-desc"></p>
+        <div class="modal-tags" id="modalTags"></div>
+        <div class="modal-actions">
+          <a class="btn btn-primary btn-small" href="#contact">Request quote</a>
+          <button class="btn btn-ghost btn-small" type="button" data-close="1">Close</button>
+        </div>
+      </div>
+    </div>
+    <script>
+(() => {
+  const prefersReduced = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
+
+  // Sticky header elevation
+  const header = document.querySelector("[data-elevate]");
+  const elevateHeader = () => {
+    if (!header) return;
+    header.setAttribute("data-scrolled", window.scrollY > 8 ? "1" : "0");
+  };
+
+  const setScrollProgress = () => {
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - doc.clientHeight;
+    const progress = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+    doc.style.setProperty("--scroll", progress.toFixed(4));
+  };
+
+  const onScroll = () => {
+    elevateHeader();
+    setScrollProgress();
+  };
+
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", setScrollProgress, { passive: true });
+
+  // Mobile nav
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector("#site-nav");
+  if (toggle && nav) {
+    const closeNav = () => {
+      nav.removeAttribute("data-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.removeAttribute("data-open");
+    };
+
+    toggle.addEventListener("click", () => {
+      const open = nav.getAttribute("data-open") === "1";
+      if (open) closeNav();
+      else {
+        nav.setAttribute("data-open", "1");
+        toggle.setAttribute("aria-expanded", "true");
+        toggle.setAttribute("data-open", "1");
+      }
+    });
+
+    nav.addEventListener("click", (e) => {
+      const target = e.target;
+      if (!(target instanceof HTMLElement)) return;
+      if (target.tagName.toLowerCase() === "a") closeNav();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeNav();
+    });
+  }
+
+  // Scroll reveal
+  const revealEls = Array.from(document.querySelectorAll(".reveal"));
+  if (!prefersReduced && "IntersectionObserver" in window && revealEls.length) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          entry.target.classList.add("is-in");
+          io.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.12 }
+    );
+    for (const el of revealEls) io.observe(el);
+  } else {
+    for (const el of revealEls) el.classList.add("is-in");
+  }
+
+  // Timeline step highlight
+  const steps = Array.from(document.querySelectorAll(".timeline-step"));
+  if (!prefersReduced && "IntersectionObserver" in window && steps.length) {
+    const ioSteps = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!(entry.target instanceof HTMLElement)) continue;
+          if (entry.isIntersecting) entry.target.classList.add("is-active");
+          else entry.target.classList.remove("is-active");
+        }
+      },
+      { threshold: 0.55 }
+    );
+    for (const el of steps) ioSteps.observe(el);
+  }
+
+  // Toast helper
+  const toast = document.querySelector(".toast");
+  let toastTimer = 0;
+  const showToast = (message) => {
+    if (!toast) return;
+    toast.textContent = message;
+    toast.setAttribute("data-show", "1");
+    window.clearTimeout(toastTimer);
+    toastTimer = window.setTimeout(() => toast.removeAttribute("data-show"), 2400);
+  };
+
+  document.addEventListener("click", (e) => {
+    const target = e.target;
+    if (!(target instanceof HTMLElement)) return;
+    const msg = target.getAttribute("data-toast");
+    if (msg) showToast(msg);
+  });
+})();
+
+
+(() => {
+  const $ = (sel) => document.querySelector(sel);
+  const grid = $("#grid");
+  const count = $("#count");
+  const inputQ = $("#q");
+  const inputType = $("#type");
+  const inputUse = $("#use");
+  const clearBtn = $("#clear");
+
+  if (!grid || !count || !inputQ || !inputType || !inputUse || !clearBtn) return;
+
+  const products = [
+    {
+      id: "mango",
+      name: "Mango Powder",
+      type: "fruit",
+      desc: "Bright, sweet mango for smoothies, yoghurt, desserts, and bakery mixes.",
+      uses: ["smoothies", "baking"],
+      tags: ["Sweet", "Tropical", "Instant mixes"],
+    },
+    {
+      id: "banana",
+      name: "Banana Powder",
+      type: "fruit",
+      desc: "Creamy banana notes for shakes, baby foods, and baked goods.",
+      uses: ["smoothies", "baking", "fortification"],
+      tags: ["Creamy", "Natural sweetness", "Baking"],
+    },
+    {
+      id: "pineapple",
+      name: "Pineapple Powder",
+      type: "fruit",
+      desc: "Tangy pineapple for beverages, gummies, dessert premixes, and seasonings.",
+      uses: ["smoothies", "seasoning"],
+      tags: ["Tangy", "Aromatic", "Beverages"],
+    },
+    {
+      id: "beet",
+      name: "Beetroot Powder",
+      type: "vegetable",
+      desc: "Vibrant colour and earthy sweetness for drinks, sauces, frostings, and mixes.",
+      uses: ["smoothies", "soups", "baking"],
+      tags: ["Colour", "Earthy", "Desserts"],
+    },
+    {
+      id: "spinach",
+      name: "Spinach Powder",
+      type: "vegetable",
+      desc: "Greens boost for pasta, soups, savoury premixes, and nutrition blends.",
+      uses: ["soups", "fortification"],
+      tags: ["Greens", "Savory", "Functional blends"],
+    },
+    {
+      id: "tomato",
+      name: "Tomato Powder",
+      type: "vegetable",
+      desc: "Rich tomato base for soups, sauces, seasoning blends, and instant meals.",
+      uses: ["soups", "seasoning"],
+      tags: ["Umami", "Base", "Instant foods"],
+    },
+    {
+      id: "carrot",
+      name: "Carrot Powder",
+      type: "vegetable",
+      desc: "Mild sweetness and colour for bakery, soups, and snack seasoning.",
+      uses: ["baking", "soups", "seasoning"],
+      tags: ["Mild", "Orange hue", "Versatile"],
+    },
+    {
+      id: "green-mix",
+      name: "Green Blend (Kale + Spinach)",
+      type: "blend",
+      desc: "Balanced greens blend for daily smoothies and functional nutrition mixes.",
+      uses: ["smoothies", "fortification"],
+      tags: ["Blend", "Greens", "Daily use"],
+    },
+    {
+      id: "tropical-mix",
+      name: "Tropical Sunshine Blend",
+      type: "blend",
+      desc: "Mango + pineapple + banana for a smooth, sweet, tropical profile.",
+      uses: ["smoothies", "baking"],
+      tags: ["Blend", "Tropical", "Bestseller"],
+    },
+  ];
+
+  const pillClass = (type) => {
+    if (type === "fruit") return "pill pill--fruit";
+    if (type === "vegetable") return "pill pill--veg";
+    return "pill pill--blend";
+  };
+
+  const titleCase = (s) => s.slice(0, 1).toUpperCase() + s.slice(1);
+
+  const parseHash = () => {
+    const raw = (location.hash || "").replace(/^#/, "");
+    if (!raw) return;
+    const pairs = raw.split("&").map((p) => p.split("="));
+    for (const [k, v] of pairs) {
+      if (!k) continue;
+      const value = decodeURIComponent(v || "");
+      if (k === "q" && value) inputQ.value = value;
+      if (k === "type" && value) inputType.value = value;
+      if (k === "use" && value) inputUse.value = value;
+    }
+  };
+
+  const render = (items) => {
+    grid.innerHTML = "";
+    const frag = document.createDocumentFragment();
+
+    for (const item of items) {
+      const card = document.createElement("article");
+      card.className = "f-card reveal is-in";
+      card.tabIndex = 0;
+      card.setAttribute("role", "button");
+      card.setAttribute("aria-label", `${item.name}. Open details.`);
+      card.dataset.id = item.id;
+
+      card.innerHTML = `
+        <div class="f-top">
+          <span class="${pillClass(item.type)}">${titleCase(item.type)}</span>
+          <span class="pill">${item.uses.length} uses</span>
+        </div>
+        <h3 class="f-title">${item.name}</h3>
+        <p>${item.desc}</p>
+        <div class="tag-row">
+          ${item.tags.slice(0, 4).map((t) => `<span class="tag">${t}</span>`).join("")}
+        </div>
+      `;
+
+      frag.appendChild(card);
+    }
+
+    grid.appendChild(frag);
+    count.textContent = `${items.length} result${items.length === 1 ? "" : "s"}`;
+  };
+
+  const matches = (item, q, type, use) => {
+    const query = q.trim().toLowerCase();
+    if (query) {
+      const hay = `${item.name} ${item.desc} ${item.tags.join(" ")} ${item.uses.join(" ")}`.toLowerCase();
+      if (!hay.includes(query)) return false;
+    }
+    if (type !== "all" && item.type !== type) return false;
+    if (use !== "all" && !item.uses.includes(use)) return false;
+    return true;
+  };
+
+  const apply = () => {
+    const q = inputQ.value || "";
+    const type = inputType.value || "all";
+    const use = inputUse.value || "all";
+    const filtered = products.filter((p) => matches(p, q, type, use));
+    render(filtered);
+  };
+
+  // Modal
+  const modal = $("#modal");
+  const modalTitle = $("#modalTitle");
+  const modalDesc = $("#modalDesc");
+  const modalTags = $("#modalTags");
+
+  const setModalOpen = (open) => {
+    if (!modal) return;
+    modal.setAttribute("aria-hidden", open ? "false" : "true");
+    document.documentElement.style.overflow = open ? "hidden" : "";
+  };
+
+  const openModal = (product) => {
+    if (!modal || !modalTitle || !modalDesc || !modalTags) return;
+    modalTitle.textContent = product.name;
+    modalDesc.textContent = product.desc;
+    modalTags.innerHTML = [
+      `<span class="tag">${titleCase(product.type)}</span>`,
+      ...product.uses.map((u) => `<span class="tag">${u.replace(/^\w/, (m) => m.toUpperCase())}</span>`),
+      ...product.tags.slice(0, 3).map((t) => `<span class="tag">${t}</span>`),
+    ].join("");
+    setModalOpen(true);
+    modal.querySelector(".modal-close")?.focus?.();
+  };
+
+  const closeModal = () => setModalOpen(false);
+
+  const getById = (id) => products.find((p) => p.id === id);
+
+  grid.addEventListener("click", (e) => {
+    const card = e.target instanceof HTMLElement ? e.target.closest("[data-id]") : null;
+    if (!card) return;
+    const p = getById(card.getAttribute("data-id") || "");
+    if (p) openModal(p);
+  });
+
+  grid.addEventListener("keydown", (e) => {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    const card = e.target instanceof HTMLElement ? e.target.closest("[data-id]") : null;
+    if (!card) return;
+    e.preventDefault();
+    const p = getById(card.getAttribute("data-id") || "");
+    if (p) openModal(p);
+  });
+
+  document.addEventListener("click", (e) => {
+    const t = e.target;
+    if (!(t instanceof HTMLElement)) return;
+    if (!t.getAttribute("data-close")) return;
+    closeModal();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+
+  // Filters
+  inputQ.addEventListener("input", apply);
+  inputType.addEventListener("change", apply);
+  inputUse.addEventListener("change", apply);
+  clearBtn.addEventListener("click", () => {
+    inputQ.value = "";
+    inputType.value = "all";
+    inputUse.value = "all";
+    apply();
+  });
+
+  // Init
+  parseHash();
+  apply();
+})();
+
+
+
+(() => {
+  const applyParamsToFinder = () => {
+    const q = document.querySelector("#q");
+    const type = document.querySelector("#type");
+    const use = document.querySelector("#use");
+    if (!q || !type || !use) return;
+
+    const params = new URLSearchParams(location.search);
+    const qv = params.get("q");
+    const tv = params.get("type");
+    const uv = params.get("use");
+    if (qv) q.value = qv;
+    if (tv) type.value = tv;
+    if (uv) use.value = uv;
+
+    if (qv) q.dispatchEvent(new Event("input", { bubbles: true }));
+    if (tv) type.dispatchEvent(new Event("change", { bubbles: true }));
+    if (uv) use.dispatchEvent(new Event("change", { bubbles: true }));
+  };
+
+  window.addEventListener("DOMContentLoaded", applyParamsToFinder, { once: true });
+})();
+</script>
+  </body>
+</html>
