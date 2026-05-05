@@ -104,7 +104,7 @@ if(submitOrderBtn) {
         // Construct WhatsApp Message
         const message = `Hi Sun Rooted! I would like to order ${grams} grams of ${currentProduct}.`;
         const encodedMessage = encodeURIComponent(message);
-        const whatsappNumber = '8019441882'; // From your updated link
+        const whatsappNumber = '+916300338664'; // From your updated link
         
         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
         
